@@ -1,13 +1,10 @@
 import './App.css';
+import Home from './components/pages/Home/home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Discord Explore University
-        </p>
-      </header>
+    <div>
+      <Home />
     </div>
   );
 }
