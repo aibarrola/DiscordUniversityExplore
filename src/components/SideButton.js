@@ -1,9 +1,9 @@
 import React from 'react';
 import './SideButton.css'
 
-function SideButton({name, iconName}){
+function SideButton({buttonName, iconName,page, changePage}){
     return(
-        <p className="sideButton"><i className="small material-icons">{iconName}</i> {name} </p>
+        <p className="sideButton" onClick={() => changePage(page)}><i className="small material-icons">{iconName}</i> {buttonName} </p>
         )
 }
 

@@ -7,7 +7,7 @@ function Header(){
         <div className="header">
             <div className="banner">
                 <h4> Find your community in SJSU </h4> 
-                {/* Search  */}
+                {/* Search bar  */}
 
             </div>
         </div>

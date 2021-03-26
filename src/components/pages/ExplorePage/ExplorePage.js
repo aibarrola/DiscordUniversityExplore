@@ -1,17 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Sidebar from '../../Sidebar'
 import Header from '../../Header'
+import Main from '../../Main'
+
 
 import './ExplorePage.css'
 
+
+
+
 function ExplorePage(){
+
+    const [page, setPage] = useState("Home")
+    
+    const changePage = newPage =>{
+        setPage(newPage);
+    }
+
     return(
         <div>
             <div className="row">
 
                 <div className="col s3">
-                    <Sidebar />
+                    <Sidebar changePage={changePage} />
                 </div>
 
                 <div className="col s9">
@@ -19,18 +31,10 @@ function ExplorePage(){
                     <div className="row">
                         <Header />
                     </div>
-                  {/*main page */}
-                    {/*search bar */}
 
-
-                    {/*home page */}
-                    {/*cultural page */}
-                    {/*academic page */}
-                    {/*religious page */}
-                    {/*club sports page */}
-                    {/*special interest page */}
-                    {/*fraternity page */}
-                    {/*sorority page */}
+                    <div className="row">
+                        <Main  page={page} />
+                    </div>
 
                 </div>
 
