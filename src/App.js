@@ -1,10 +1,13 @@
 import './App.css';
-import Home from './components/pages/Home/home';
+import 'materialize-css/dist/css/materialize.min.css';
+
+import ExplorePage from './components/pages/ExplorePage/ExplorePage';
 
 function App() {
   return (
     <div>
-      <Home />
+      <ExplorePage />
+
     </div>
   );
 }

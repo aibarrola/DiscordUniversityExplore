@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
   margin: 0;
   font-family: 'Roboto';
@@ -5,15 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::before,
+::after{
+  font-family: 'Roboto', sans-serif;
 }
 
 :root{
+
+  /* DISCORD COLORS */
   --black: #292B2F;
   --dark-grey: #2F3136;
   --grey: #36393F;
   --light-grey: #B9BBBE;
+
+  font-family: Arial, Helvetica, sans-serif;
 
 }

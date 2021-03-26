@@ -1,18 +1,17 @@
 .sideButton{
     background-color: var(--dark-grey);
     color: var(--light-grey);
-    width: 90%;
-    height: 3rem;
-    border: none;
-    font-size: 1.2rem;
+    width: 85%;
     font-weight: bold;
+    font-size: 1.2rem;
     border-radius: 10px;
-    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .sideButton:hover{
     background-color: #7289DA;
-    color: white;
+    color: white; 
 }

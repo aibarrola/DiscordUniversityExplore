@@ -1,0 +1,10 @@
+.banner{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+}
+
+.search{
+    width: 20%;
+    color: red;
+}

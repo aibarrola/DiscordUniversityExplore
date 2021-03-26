@@ -1,10 +1,10 @@
 import React from 'react';
 import './SideButton.css'
 
-function SideButton({name}){
+function SideButton({name, iconName}){
     return(
-        <button className="sideButton"> {name} </button>
-    )
+        <p className="sideButton"><i className="small material-icons">{iconName}</i> {name} </p>
+        )
 }
 
 export default SideButton;
