@@ -3,17 +3,6 @@ import Home from '../components/pages/Home';
 
 function Main({page}){
 
-    
-
-    // switch(page){
-    //     case "Home":
-    //         <h1> Home </h1>
-
-    //     case "Cultural":
-    //         <h2> Cultural </h2> 
-
-    // }
-
 
 
 
@@ -21,9 +10,9 @@ function Main({page}){
 
     return(
         <div>
+            <h4> {page} </h4> 
 
-
-            
+            {/* list of organizations */}
 
         </div>
     )

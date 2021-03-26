@@ -13,9 +13,10 @@ import './ExplorePage.css'
 function ExplorePage(){
 
     const [page, setPage] = useState("Home")
+
     
     const changePage = newPage =>{
-        setPage(newPage);
+        setPage(newPage);        
     }
 
     return(
@@ -23,7 +24,7 @@ function ExplorePage(){
             <div className="row">
 
                 <div className="col s3">
-                    <Sidebar changePage={changePage} />
+                    <Sidebar changePage={changePage}/>
                 </div>
 
                 <div className="col s9">
