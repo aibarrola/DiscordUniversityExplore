@@ -1,0 +1,27 @@
+.cardContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    background-color: var(--dark-grey);
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 10px 10px;
+
+}
+
+.card:hover{
+    background-color: #292B2F;
+    box-shadow:  3px 3px 20px #292B2F;
+}
+
+.cardTitle{
+    font-size: 2rem;
+}
+
+.cardDesc{
+    font-size: 1rem;
+}

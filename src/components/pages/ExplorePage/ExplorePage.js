@@ -23,7 +23,7 @@ function ExplorePage(){
         <div>
             <div className="row">
 
-                <div className="col s3">
+                <div className="col s3 fixed-sidebar">
                     <Sidebar changePage={changePage}/>
                 </div>
 

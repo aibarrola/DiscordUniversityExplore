@@ -1,5 +1,7 @@
 import React from 'react';
 import Home from '../components/pages/Home';
+import Card from '../components/Card/card'
+import '../components/Card/card.css'
 
 function Main({page}){
 
@@ -13,6 +15,38 @@ function Main({page}){
             <h4> {page} </h4> 
 
             {/* list of organizations */}
+
+            <div className="cardContainer">
+                
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+            </div> 
+
+            <div className="cardContainer">
+                
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+            </div> 
+
+            <div className="cardContainer">
+                
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+                <Card orgName="Akbayan" orgDesc="Desc" />
+
+            </div> 
+
+            
 
         </div>
     )
