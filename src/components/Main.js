@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from '../components/pages/Home';
 
+import Card from './Card/Card';
 function Main({page}){
 
 
@@ -12,7 +13,7 @@ function Main({page}){
         <div>
             <h4> {page} </h4> 
 
-            {/* list of organizations */}
+            <Card title = "This is a card"></Card>
 
         </div>
     )
