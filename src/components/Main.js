@@ -10,6 +10,7 @@ let orgs = [{orgName:"SASE", orgDesc:"This is SASE"},
 ];
 
 
+
 //returns a row 
 function toRow(row) {
     let cardRow = []
@@ -52,6 +53,7 @@ function display() {
     }
 
     //display the cards
+
     let newList  =[];
     for(let i = 0; i < rows.length; i++) {
         newList.push(toRow(rows[i])); //convert each row to a card component
@@ -60,6 +62,9 @@ function display() {
 
 }
 
+function addCard(org) {
+    orgs.push(org);
+}
 
 
 function Main({page}){
@@ -67,6 +72,9 @@ function Main({page}){
         <div>
             <h4> {page} </h4> 
             {display()}
+            {addCard({orgName:"test",orgDesc:"desc"})}
+            {addCard({orgName:"test",orgDesc:"desc"})}
+            {addCard({orgName:"test",orgDesc:"desc"})}
         </div>
     )
 }
