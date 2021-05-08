@@ -1,23 +1,40 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Home from '../components/pages/Home';
 import Card from '../components/Card/card'
 import '../components/Card/card.css'
+import axios from "axios"
 
-let organizations = [{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" }]
+// let organizations = [{ orgName: "SASE", orgDesc: "This is SASE" },
+// { orgName: "SASE", orgDesc: "This is SASE" },
+// { orgName: "SASE", orgDesc: "This is SASE" },
+// { orgName: "SASE", orgDesc: "This is SASE" }]
+
+
+async function getCards() {
+    let result = await axios
+        .get("/api/cards")
+        .then(res => res.data);
+    return result;
+}
 
 function Main({ page }) {
+    const [orgs, setOrgs] = useState([]);
+    // useEffect(()=>{
+    //     setOrgs(orgs => [...orgs, ]);
+    //     console.log("orgs");
+    //     console.log(orgs);                   
+    // }, [])
+
+    function importData() {
+        setOrgs(orgs => [...orgs, "Hello injection"]);
+    }
 
 
     const initialOrgData = Object.freeze({
         orgName: "",
         orgDesc: ""
     });
-
     const [formData, updateFormData] = React.useState(initialOrgData);
-    const [orgs, setOrgs] = useState(organizations);
 
     const handleChange = (e) => {
         updateFormData({
@@ -83,9 +100,8 @@ function Main({ page }) {
     function addCard(org) {
 
 
-        setOrgs(organizations => [...organizations, org]);
+        setOrgs(orgs => [...orgs, org]);
         console.log("pushing new card: ");
-        console.log(orgs[orgs.length - 1]);;
 
     }
 
@@ -115,6 +131,7 @@ function Main({ page }) {
         <div>
             <h4> {page} </h4>
             {orgForm()}
+            {importData()}
             {display()}
         </div>
     )
