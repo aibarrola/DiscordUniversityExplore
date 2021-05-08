@@ -3,18 +3,22 @@ import Home from '../components/pages/Home';
 import Card from '../components/Card/card'
 import '../components/Card/card.css'
 
+let orgs = [{orgName:"SASE", orgDesc:"This is SASE"}, 
+{orgName:"SASE", orgDesc:"This is SASE"},
+{orgName:"SASE", orgDesc:"This is SASE"},
+{orgName:"SASE", orgDesc:"This is SASE"},
+];
 
 
-function row() {
-
-    let row = []
+//returns a row 
+function toRow(row) {
+    let cardRow = []
     function card() {
-        for(let i = 0; i < 3; i++) {
-            row.push(<Card orgName={"Card" + i} orgDesc="Desc" />)
+        for(let i = 0; i < row.length; i++) {
+            cardRow.push(row[i]);
         }
-        return row;
+        return cardRow;
     }
-
     return(
         <div className ="cardContainer">
             {card()}
@@ -22,22 +26,47 @@ function row() {
     )
 }
 
+function toCard(org) {
+    return(
+        <Card orgName={org.orgName} orgDesc={org.orgDesc} />
+    )
+}
 
-function displayRow() {
-
+//pseudocode: if the row has hit 3, push the current row into rows, then start a new row
+function display() {
+    let row = [];
     let rows = [];
 
-    for(let i = 0; i < 3; i ++) {
-        rows.push(row());
+    //organize the cards
+    for(let  i = 0; i < orgs.length; i++) {
+        if((i+1) % 3 == 0 && i != 0) { 
+            row.push(toCard(orgs[i])); //push the 3rd col, before  adding the row
+            rows.push(row);
+            row = [];
+        } else {
+            row.push(toCard(orgs[i]));
+        }
     }
-    return rows;
+    if(row.length != 0) {
+        rows.push(row);
+    }
+
+    //display the cards
+    let newList  =[];
+    for(let i = 0; i < rows.length; i++) {
+        newList.push(toRow(rows[i])); //convert each row to a card component
+    }
+    return newList;
+
 }
+
+
 
 function Main({page}){
     return(
         <div>
             <h4> {page} </h4> 
-            {displayRow()}
+            {display()}
         </div>
     )
 }
