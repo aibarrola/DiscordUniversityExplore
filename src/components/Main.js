@@ -4,10 +4,15 @@ import Card from '../components/Card/card'
 import '../components/Card/card.css'
 import axios from "axios"
 
-// let organizations = [{ orgName: "SASE", orgDesc: "This is SASE" },
-// { orgName: "SASE", orgDesc: "This is SASE" },
-// { orgName: "SASE", orgDesc: "This is SASE" },
-// { orgName: "SASE", orgDesc: "This is SASE" }]
+let organizations = [{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },
+{ orgName: "SASE", orgDesc: "This is SASE" },]
 
 
 async function getCards() {
@@ -18,16 +23,8 @@ async function getCards() {
 }
 
 function Main({ page }) {
-    const [orgs, setOrgs] = useState([]);
-    // useEffect(()=>{
-    //     setOrgs(orgs => [...orgs, ]);
-    //     console.log("orgs");
-    //     console.log(orgs);                   
-    // }, [])
+    const [orgs, setOrgs] = useState(organizations);
 
-    function importData() {
-        setOrgs(orgs => [...orgs, "Hello injection"]);
-    }
 
 
     const initialOrgData = Object.freeze({
@@ -114,12 +111,12 @@ function Main({ page }) {
             <>
                 <label>
                     Organization Name
- <input name="orgName" onChange={handleChange} />
+                <input name="orgName" onChange={handleChange} />
                 </label>
                 <br />
                 <label>
                     Organization Description
- <input name="orgDesc" onChange={handleChange} />
+                <input name="orgDesc" onChange={handleChange} />
                 </label>
                 <br />
                 <button onClick={() => addCard(formData)}>Submit</button>
@@ -130,8 +127,7 @@ function Main({ page }) {
     return (
         <div>
             <h4> {page} </h4>
-            {orgForm()}
-            {importData()}
+            {/* {orgForm()} */}
             {display()}
         </div>
     )
