@@ -4,15 +4,8 @@ import Card from '../components/Card/card'
 import '../components/Card/card.css'
 import axios from "axios"
 
-let organizations = [{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },
-{ orgName: "SASE", orgDesc: "This is SASE" },]
+
+
 
 
 async function getCards() {
@@ -22,10 +15,13 @@ async function getCards() {
     return result;
 }
 
-function Main({ page }) {
+
+
+function Main({ page, organizations}) {
     const [orgs, setOrgs] = useState(organizations);
+    
 
-
+    console.log(orgs);
 
     const initialOrgData = Object.freeze({
         orgName: "",
@@ -101,9 +97,6 @@ function Main({ page }) {
         console.log("pushing new card: ");
 
     }
-
-
-
 
     const orgForm = () => {
 
