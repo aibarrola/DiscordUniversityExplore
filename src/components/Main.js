@@ -17,9 +17,8 @@ async function getCards() {
 
 
 
-function Main({ page, organizations}) {
-    const [orgs, setOrgs] = useState(organizations);
-    
+function Main({ page, organizations, setOrgs}) {
+    let orgs = organizations;
 
     console.log(orgs);
 

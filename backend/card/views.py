@@ -6,4 +6,7 @@ from .models import Card
 # Create your views here.
 class CardView(viewsets.ModelViewSet):
     serializer_class = CardSerializer
-    queryset = Card.objects.all()
+    
+    def get_queryset(self):
+        category = self.request.GET['category']
+        return Card.objects.all().filter(category=category) 
