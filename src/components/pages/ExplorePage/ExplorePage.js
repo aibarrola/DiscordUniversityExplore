@@ -19,52 +19,33 @@ async function getCards(options={}) {
 }
 let currentOrgs = [];
 let currentPage = "Home";
-
-// let home_array = [
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },
-//     { orgName: "SASE", orgDesc: "This is SASE" },]
-
-// let cultural_array = [];
-// let academic_array = [];
-// let religious_array = [];
-// let sports_array = [];
-// let specialInterest_array = [];
-// let fraternity_array = [];
-// let sorority_array = [];
-
-// function select_array(page) {
-//     // getCards();
-//     if(page == "Home") {return home_array}
-//     if(page == "Cultural") {return cultural_array}
-//     if(page == "Academic") {return academic_array}
-//     if(page == "Religious") {return religious_array}
-//     if(page == "Club Sports") {return sports_array}
-//     if(page == "Special Interest") {return specialInterest_array}
-//     if(page == "Fraternity") {return fraternity_array}
-//     if(page == "Sorority") {return sorority_array}
-// }
-
+let currentSearchString = "";
 
 function ExplorePage(){
 
     const [page, setPage] = useState(currentPage);
-    const [orgs,setOrgs] = useState(currentOrgs);
+    const [orgs, setOrgs] = useState(currentOrgs);
+    const [search, setSearchString] = useState(currentSearchString);
 
     
     const changePage = async newPage =>{
         setPage(newPage);
         let cards = await getCards({
-            category: newPage.replace(" ", "_").toUpperCase()
+            category: newPage.replace(" ", "_").toUpperCase(),
+            search
         })     
         setOrgs(cards);   
         console.log("page changed to " + newPage); 
+    }
+
+    const changeSearchText = async (event) =>{
+        setSearchString(event.target.value);
+        let cards = await getCards({
+            category: page.replace(" ", "_").toUpperCase(),
+            search: event.target.value
+        })     
+        setOrgs(cards);   
+        console.log("Search with keyword: " + search); 
     }
 
     return(
@@ -78,9 +59,8 @@ function ExplorePage(){
                 <div className="col s9">
                 
                     <div className="row">
-                        <Header />
+                        <Header changeSearchText={changeSearchText}/>
                     </div>
-
                     <div className="row">
                         <Main  page={page} organizations ={orgs} setOrgs={setOrgs}/>
                     </div>

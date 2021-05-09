@@ -2,20 +2,6 @@ import React, { useState , useEffect } from "react";
 import Home from '../components/pages/Home';
 import Card from '../components/Card/card'
 import '../components/Card/card.css'
-import axios from "axios"
-
-
-
-
-
-async function getCards() {
-    let result = await axios
-        .get("/api/cards")
-        .then(res => res.data);
-    return result;
-}
-
-
 
 function Main({ page, organizations, setOrgs}) {
     let orgs = organizations;
