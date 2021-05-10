@@ -1,19 +1,12 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Home from '../components/pages/Home';
 import Card from '../components/Card/card'
 import '../components/Card/card.css'
 
-let organizations = [
-    { orgName: "SASE", orgDesc: "This is Prepares Asian heritage scientists and engineers for success in the business world." },
-    { orgName: "ACM SIGGRAPH", orgDesc: "Formed out of a need to represent students with an interest in computer graphicsE" },
-    { orgName: "HopLite", orgDesc: "Practice Leetcode" },
-    { orgName: "SASE", orgDesc: "This is Prepares Asian heritage scientists and engineers for success in the business world." },
-    { orgName: "ACM SIGGRAPH", orgDesc: "Formed out of a need to represent students with an interest in computer graphicsE" },
-    { orgName: "HopLite", orgDesc: "Practice Leetcode" }
-]
+function Main({ page, organizations, setOrgs}) {
+    let orgs = organizations;
 
-function Main({ page }) {
-
+    console.log(orgs);
 
     const initialOrgData = Object.freeze({
         orgName: "",
@@ -21,9 +14,7 @@ function Main({ page }) {
         orgType: "",
         orgLink: ""
     });
-
     const [formData, updateFormData] = React.useState(initialOrgData);
-    const [orgs, setOrgs] = useState(organizations);
 
     const handleChange = (e) => {
         updateFormData({
@@ -89,14 +80,10 @@ function Main({ page }) {
     function addCard(org) {
 
 
-        setOrgs(organizations => [...organizations, org]);
+        setOrgs(orgs => [...orgs, org]);
         console.log("pushing new card: ");
-        console.log(orgs[orgs.length - 1]);;
 
     }
-
-
-
 
     const orgForm = () => {
 
@@ -112,16 +99,6 @@ function Main({ page }) {
                 <input name="orgDesc" onChange={handleChange} />
                 </label>
                 <br />
-                <label>
-                    Organization Type
-                <input name="orgType" onChange={handleChange} />
-                </label>
-                <br />
-                <label>
-                    Organization Link
-                <input name="orgLink" onChange={handleChange} />
-                </label>
-                <br />
                 <button onClick={() => addCard(formData)}>Submit</button>
             </>
         );
@@ -130,7 +107,7 @@ function Main({ page }) {
     return (
         <div>
             <h4> {page} </h4>
-            {orgForm()}
+            {/* {orgForm()} */}
             {display()}
         </div>
     )
