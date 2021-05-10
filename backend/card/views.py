@@ -10,6 +10,10 @@ class CardView(viewsets.ModelViewSet):
     
     def get_queryset(self):
         category = self.request.GET['category']
+
+        if category == 'HOME':
+            return Card.objects.all()
+
         search = self.request.GET.get('search', "")
         search_fields = ['orgName']
         terms = search.split()
