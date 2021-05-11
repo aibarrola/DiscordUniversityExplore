@@ -4,7 +4,9 @@
     text-align: center;
     /* background-color: var(--dark-grey); */
     background-image: url("./pages/ExplorePage/sjsubanner.png");
-    background-size: 100% 100%;
+    background-size: 99% 100%;
+    background-repeat: no-repeat;
+    
 }
 
 .search{

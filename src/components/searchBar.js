@@ -19,7 +19,7 @@ const SearchBar = ({
                     transition: "0.3s all",
                     "padding-left": "10px",
                     "padding-right": "10px",
-                    "border-radius": "10px"
+                    "border-radius": "18px"
                   }}
             />
         </div>
