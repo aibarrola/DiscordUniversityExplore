@@ -3,9 +3,7 @@ import './Header.css'
 import SearchBar from './searchBar';
 
 
-function Header({
-    changeSearchText
-}){
+function Header({changeSearchText}){
     return(
         <div className="header">
             <div className="banner">

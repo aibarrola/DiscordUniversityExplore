@@ -1,3 +1,8 @@
+a{
+    text-decoration: none;
+    color: none;
+}
+
 .cardContainer{
     display: flex;
     justify-content: space-between;
@@ -10,8 +15,16 @@
     border-radius: 10px;
     margin: 10px 10px;
     padding: 10px 10px;
-
 }
+
+.cardPhoto{
+}
+
+.resize{
+    width: 380px;
+    height: auto;
+}
+
 
 .card:hover{
     background-color: #292B2F;
@@ -19,9 +32,13 @@
 }
 
 .cardTitle{
-    font-size: 2rem;
+    font-size: 1.4rem;
+    color: white;
+    margin: 10px 0px;
 }
 
 .cardDesc{
     font-size: 1rem;
+    color: var(--light-grey);
+    margin: 10px 0px;
 }

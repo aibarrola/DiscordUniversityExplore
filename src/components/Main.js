@@ -44,7 +44,7 @@ function Main({ page, organizations, setOrgs}) {
 
     function toCard(org) {
         return (
-            <Card orgName={org.orgName} orgDesc={org.orgDesc} orgLink={org.orgLink} />
+            <Card orgName={org.orgName} orgDesc={org.orgDesc} orgLink={org.orgLink} orgImgLink={org.orgImgLink} />
         )
     }
 
