@@ -17,10 +17,7 @@ function Card({orgName, orgDesc, orgLink, orgImgLink}){
                         <h1 className="cardTitle"> {orgName} </h1>
                         <h4 className="cardDesc"> {orgDesc}</h4>
                     </div>
-
-                    <p> {orgLink} </p> 
                 </a>
-
             </div>
 
         </>

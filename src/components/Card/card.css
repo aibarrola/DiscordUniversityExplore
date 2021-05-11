@@ -5,24 +5,22 @@ a{
 
 .cardContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 .card{
     background-color: var(--dark-grey);
-    height: 250px;
-    width: 100%;
+    height: 280px;
+    width: 33%;
     border-radius: 10px;
     margin: 10px 10px;
     padding: 10px 10px;
 }
 
-.cardPhoto{
-}
 
 .resize{
-    width: 380px;
-    height: auto;
+    width: 100%;
+    height: 130px
 }
 
 
@@ -32,13 +30,13 @@ a{
 }
 
 .cardTitle{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: white;
-    margin: 10px 0px;
+    margin: 3px 0px;
 }
 
 .cardDesc{
-    font-size: 1rem;
+    font-size: .9rem;
     color: var(--light-grey);
-    margin: 10px 0px;
+    margin: 0px 0px;
 }
