@@ -14,7 +14,6 @@ a{
     width: 33%;
     border-radius: 10px;
     margin: 10px 10px;
-    padding: 10px 10px;
 }
 
 
@@ -30,6 +29,15 @@ a{
     background-color: #292B2F;
     box-shadow:  3px 3px 20px #292B2F;
 }
+
+.cardContent{
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
 
 .cardTitle{
     font-size: 1.1rem;
