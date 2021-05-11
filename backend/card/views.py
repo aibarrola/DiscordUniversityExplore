@@ -11,9 +11,6 @@ class CardView(viewsets.ModelViewSet):
     def get_queryset(self):
         category = self.request.GET['category']
 
-        if category == 'HOME':
-            return Card.objects.all()
-
         search = self.request.GET.get('search', "")
         search_fields = ['orgName']
         terms = search.split()
@@ -32,7 +29,12 @@ class CardView(viewsets.ModelViewSet):
                 query = or_query
             else:
                 query = query & or_query
-        cards = Card.objects.all().filter(category=category)
+    
+        if category == 'HOME':
+            cards = Card.objects.all()
+        else:
+            cards = Card.objects.all().filter(category=category)
+        
         if (query != None):
             cards = cards.filter(query)
         return cards
