@@ -10,7 +10,9 @@ function Main({ page, organizations, setOrgs}) {
 
     const initialOrgData = Object.freeze({
         orgName: "",
-        orgDesc: ""
+        orgDesc: "",
+        orgType: "",
+        orgLink: ""
     });
     const [formData, updateFormData] = React.useState(initialOrgData);
 
@@ -42,7 +44,7 @@ function Main({ page, organizations, setOrgs}) {
 
     function toCard(org) {
         return (
-            <Card orgName={org.orgName} orgDesc={org.orgDesc} />
+            <Card orgName={org.orgName} orgDesc={org.orgDesc} orgLink={org.orgLink} orgImgLink={org.orgImgLink} />
         )
     }
 
